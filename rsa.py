@@ -1,24 +1,19 @@
 #!/usr/bin/python3
 
 import time
-import sys
-import math
+import sys 
 
 def factor(n):
     if n == 1:
         return "1=1*1"
-    a = int(math.sqrt(n))
-    #a = n//2
-    if n % 2 == 0:
-        print("{:d}={:d}*2".format(n, n//2))
-        return
-    for i in range(a + 1, 3, 2):
-        if n % i ==  0:
-            p = i
+    a = n // 2
+    for i in range(2, a + 1): 
+        if n % i ==  0:  
+            p = i 
             q = n // p
-            print("{:d}={:d}*{:d}".format(n, q, p))
+            print("{:d}={:d}*{:d}".format(n, q, p)) 
             return
-    print("{:d}={:d}*1".format(n, n))
+    return ("{:d}={:d}*1".format(n, n)) 
 
 if len(sys.argv) != 2:
     print("Usage: factors <file>")
