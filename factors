@@ -5,7 +5,7 @@ import time
 def factor(n):
     if n == 1:
         return
-    a = (int)(n / 2)
+    a = n // 2
     for i in range(2, a + 1):
         if n % i ==  0:
             p = i
@@ -13,3 +13,4 @@ def factor(n):
             print("{:d}={:d}*{:d}".format(n, p, q))
             return
     print("{:d}=1*{:d}".format(n, n))
+
