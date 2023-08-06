@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import time
+import sys
 
 def factor(n):
     if n == 1:
@@ -10,7 +11,19 @@ def factor(n):
         if n % i ==  0:
             p = i
             q = n // p
-            print("{:d}={:d}*{:d}".format(n, p, q))
+            print("{:d}={:d}*{:d}".format(n, q, p))
             return
-    print("{:d}=1*{:d}".format(n, n))
+    return ("{:d}={:d}*1".format(n, n))
 
+filename = sys.argv[1]
+
+try:
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+except IOError:
+    sys.exit(1)
+
+
+for line in lines:
+    n = int(line.strip())
+    factorisation = factor(n)
