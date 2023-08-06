@@ -15,6 +15,10 @@ def factor(n):
             return
     return ("{:d}={:d}*1".format(n, n))
 
+if len(sys.argv) != 2:
+    print("Usage: factors <file>")
+    sys.exit(1)
+
 filename = sys.argv[1]
 
 try:
