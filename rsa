@@ -12,6 +12,12 @@ def is_prime(n):
     for i in range(2, range_end):
         if n % i == 0:
             return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+
     return True
 
 def prime_factors(n):
